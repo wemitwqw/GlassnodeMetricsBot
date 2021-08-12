@@ -14,7 +14,7 @@ import logging
 from datetime import datetime
 
 chat_ID = -589806092
-botToken = '1919764003:AAG6YpKssRgPyzLFt2ZNkDjz2NgxSfTIrAc'
+botToken = '1916429459:AAGFVdWbjrUL7HcaorzzaufMWvL3bMUuls0'
 bot = telegram.Bot(token=botToken)
 glassAPI = "1wOnIiKwiAZ03yVSoJjUsm4J1gA"
 
@@ -51,7 +51,7 @@ def nonZeroBalance(update, context, currency):
     message = "<pre>" + df.to_string(index=False) + "</pre>" + "\n"
     #message = df.to_string(index=False)
     context.bot.sendPhoto(chat_id=update.effective_chat.id,
-                          photo=open('D:\Python\GlassnodeMetricsBot\on_zero_count_saved_figure.png', 'rb'), caption=message, parse_mode=ParseMode.HTML)
+                          photo=open('sys.path[0]/on_zero_count_saved_figure.png', 'rb'), caption=message, parse_mode=ParseMode.HTML)
     #context.bot.send_message(chat_id=update.effective_chat.id, text=message, parse_mode=ParseMode.HTML)
 
 def moreThan1Balance(update, context, currency):
@@ -78,7 +78,7 @@ def moreThan1Balance(update, context, currency):
     message = "<pre>" + df.to_string(index=False) + "</pre>" + "\n"
     # message = df.to_string(index=False)
     context.bot.sendPhoto(chat_id=update.effective_chat.id,
-                          photo=open('D:\Python\GlassnodeMetricsBot\min_1_count_saved_figure.png', 'rb'), caption=message,
+                          photo=open('sys.path[0]/min_1_count_saved_figure.png', 'rb'), caption=message,
                           parse_mode=ParseMode.HTML)
     # context.bot.send_message(chat_id=update.effective_chat.id, text=message, parse_mode=ParseMode.HTML)
 
@@ -91,7 +91,7 @@ def defineArgs(update, context):
         moreThan1Balance(update, context, currency)
 
 def main():
-    nonZeroBalanceHandler = CommandHandler('glassbot', defineArgs, pass_args=True)
+    nonZeroBalanceHandler = CommandHandler('bot', defineArgs, pass_args=True)
     dispatcher.add_handler(nonZeroBalanceHandler)
 
     unknown_handler = MessageHandler(Filters.command, unknown)
