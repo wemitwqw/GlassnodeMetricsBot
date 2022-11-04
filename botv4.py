@@ -2,7 +2,7 @@ import json
 import requests
 import pandas as pd
 import matplotlib.pyplot as plt
-import jinja2
+#import jinja2
 import os, sys
 
 import telegram
@@ -24,7 +24,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 def nuplFunc(update, context, currency):
     req = requests.get('https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=%s&'
-                       'metrics=CapRealUSD,CapMrktCurUSD&limit_per_asset=5' % currency).json()
+                       'metrics=CapRealUSD,CapMrktCurUSD&limit_per_asset=30' % currency).json()
     req = str(req['data'])
     req = req.replace("\'", "\"")
     req = json.loads(req)
