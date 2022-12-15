@@ -13,7 +13,7 @@ from telegram.ext import MessageHandler, Filters
 
 import logging
 
-botToken = '1916429459:AAGFVdWbjrUL7HcaorzzaufMWvL3bMUuls0'
+botToken = ''
 bot = telegram.Bot(token=botToken)
 
 updater = Updater(token=botToken, use_context=True)
